@@ -1,17 +1,21 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
+import ReactDOM from 'react-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
+
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import About from './pages/about';
+import SendsList from './component/sendsList'
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+import './css/index.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+ReactDOM.render(
+    <BrowserRouter>
+        <Switch>
+            <Route path="/" exact={true} component={App} />
+            <Route path="/about" component={About} />
+            <Route path="/sends-list" component={SendsList} />
+        </Switch>
+    </BrowserRouter>
+    , document.getElementById('root'));
+// registerServiceWorker();
