@@ -2,10 +2,10 @@ import React from "react";
 
 import FormQuerySend from "../../components/send/FormQuerySend";
 
-const Query = () => (
+const QuerySend = () => (
     <div className="container-page">
         <FormQuerySend />
     </div>
 )
 
-export default Query;
+export default QuerySend;
