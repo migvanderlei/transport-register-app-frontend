@@ -1,10 +1,10 @@
 import React from "react";
 
-import FormQuerySend from "../../components/send/FormQuerySend";
+import SearchSend from "../../components/send/SearchSend";
 
 const QuerySend = () => (
     <div className="container-page">
-        <FormQuerySend />
+        <SearchSend />
     </div>
 )
 

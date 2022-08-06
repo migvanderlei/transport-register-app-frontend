@@ -36,15 +36,13 @@ class ListSend extends React.Component {
 
 
     return (
-      <div className="App">
-        <h1 className='title-home'> Fetch data from an api </h1>
-
+      <>
         <Table striped bordered hover size="sm">
           <thead>
             <tr>
               <th>id</th>
-              <th>sender</th>
-              <th>receiver</th>
+              <th>Remetende</th>
+              <th>Destinatário</th>
               <th>Status</th>
             </tr>
           </thead>
@@ -69,7 +67,9 @@ class ListSend extends React.Component {
             }
           </tbody>
         </Table>
-      </div>);
+      </>
+
+    );
   }
 }
 
