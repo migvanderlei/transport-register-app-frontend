@@ -1,12 +1,12 @@
 import React from 'react';
 
-import SendsList from '../component/sendsList';
+import ListSend from '../components/send/ListSend';
 
 import '../css/style.css';
 
 const Home = () => (
   <div className='container-page'>
-    <SendsList />
+    <ListSend />
   </div>
 );
 

@@ -1,12 +1,12 @@
 import React from 'react';
 
-import NavigationBar from './component/navigationBar';
+import NavigationBar from './components/NavigationBar';
 
-import Home from './pages/home'
-import About from './pages/about';
-import Create from './pages/send/create';
-import Update from './pages/send/update';
-import Query from './pages/send/query';
+import Home from './pages/Home'
+import About from './pages/About';
+import CreateSend from './pages/send/CreateSend';
+import UpdateSend from './pages/send/UpdateSend';
+import QuerySend from './pages/send/QuerySend';
 
 const App = () => {
   let Content;
@@ -15,13 +15,13 @@ const App = () => {
       Content = <Home />;
       break;
     case "/create-send":
-      Content = <Create />;
+      Content = <CreateSend />;
       break;
     case "/update-send":
-      Content = <Update />;
+      Content = <UpdateSend />;
       break;
     case "/query-send":
-      Content = <Query />;
+      Content = <QuerySend />;
       break;
     case "/about":
       Content = <About />;

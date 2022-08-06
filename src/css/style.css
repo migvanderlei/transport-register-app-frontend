@@ -1,13 +1,31 @@
 .container-page {
-  margin-top: 80px;
-  margin-left: 200px;
-  margin-right: 200px;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 2%;
+  margin-bottom: 2%;
 }
 
 .container-send {
   margin-top: 5px;
   border: thick solid #d4d4d4;
   border-width: 1px;
-  padding: 100px;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 5%;
+  padding-bottom: 5%;
   border-radius: 20px;
+}
+
+.title-form {
+  text-align: center;
+  padding-bottom: 2%;
+}
+
+.title-item-group {
+  margin-top: 10px;
+}
+
+.button-submit {
+  margin-top: 4%;
+  text-align: center;
 }

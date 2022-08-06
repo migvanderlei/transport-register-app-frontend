@@ -2,9 +2,9 @@ import React from 'react';
 import Table from 'react-bootstrap/Table';
 import Badge from 'react-bootstrap/Badge';
 
-import '../css/sendsList.css';
+import '../../css/list-send.css';
 
-class SendsList extends React.Component {
+class ListSend extends React.Component {
 
   constructor(props) {
     super(props);
@@ -73,4 +73,4 @@ class SendsList extends React.Component {
   }
 }
 
-export default SendsList;
+export default ListSend;
