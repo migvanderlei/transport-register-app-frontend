@@ -1,14 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-import NavigationBar from './component/navigationBar';
-import SendsList from './component/sendsList';
+import SendsList from '../component/sendsList';
+
+import '../css/style.css';
 
 const Home = () => (
-     <div className='main-page'>
-    <header><NavigationBar /></header>
-    <main><SendsList /></main>
-    <footer></footer>
+  <div className='container-page'>
+    <SendsList />
   </div>
 );
 

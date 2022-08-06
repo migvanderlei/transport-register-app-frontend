@@ -8,30 +8,37 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 const NavigationBar = () => (
   <Navbar bg="primary" expand="lg" variant="dark">
     <Container fluid>
+      {/* Main button (home) */}
       <Navbar.Brand href="/">Home</Navbar.Brand>
+
+      {/* Toggle button */}
       <Navbar.Toggle aria-controls="navbarScroll" />
+
+      {/* Scrolldown link group */}
       <Navbar.Collapse id="navbarScroll">
         <Nav
           className="me-auto my-2 my-lg-0"
           style={{ maxHeight: '100px' }}
           navbarScroll
         >
-          <Nav.Link href="./create-new-send-from.js">Novo Envio</Nav.Link>
-          <Nav.Link href="#action2">Link</Nav.Link>
-          <NavDropdown title="Link" id="navbarScrollingDropdown">
-            <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-            <NavDropdown.Item href="#action4">
-              Another action
-            </NavDropdown.Item>
-            <NavDropdown.Divider />
-            <NavDropdown.Item href="#action5">
-              Something else here
-            </NavDropdown.Item>
+          {/* Commom link example */}
+          {/* <Nav.Link href="./about">Novo Envio</Nav.Link> */}
+          {/* <Nav.Link href="#action2">Link2</Nav.Link> */}
+
+          {/* Drodown envios */}
+          <NavDropdown title="Envios" id="navbarScrollingDropdown">
+            <NavDropdown.Item href="/create-send">Criar Envio</NavDropdown.Item>
+            <NavDropdown.Item href="/update-send">Atualizar Envio</NavDropdown.Item>
+            <NavDropdown.Item href="/query-send">Consultar Envio</NavDropdown.Item>
+            {/* Divider example */}
+            {/* <NavDropdown.Divider /> */}
           </NavDropdown>
-          <Nav.Link href="#" disabled>
-            Link
-          </Nav.Link>
+
+          {/* Disable link example */}
+          {/* <Nav.Link href="#" disabled>Likn4</Nav.Link> */}
         </Nav>
+
+        {/* Start search */}
         <Form className="d-flex">
           <Form.Control
             type="search"
@@ -41,6 +48,8 @@ const NavigationBar = () => (
           />
           <Button variant="success">Search</Button>
         </Form>
+        {/* End search */}
+
       </Navbar.Collapse>
     </Container>
   </Navbar>

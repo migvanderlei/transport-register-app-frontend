@@ -1,0 +1,13 @@
+.container-page {
+  margin-top: 80px;
+  margin-left: 200px;
+  margin-right: 200px;
+}
+
+.container-send {
+  margin-top: 5px;
+  border: thick solid #d4d4d4;
+  border-width: 1px;
+  padding: 100px;
+  border-radius: 20px;
+}
