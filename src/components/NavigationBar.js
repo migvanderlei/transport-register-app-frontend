@@ -42,11 +42,11 @@ const NavigationBar = () => (
         <Form className="d-flex">
           <Form.Control
             type="search"
-            placeholder="Search"
+            placeholder="Pesquisar"
             className="me-2"
             aria-label="Search"
           />
-          <Button variant="success">Search</Button>
+          <Button variant="success">Pesquisar</Button>
         </Form>
         {/* End search */}
 
