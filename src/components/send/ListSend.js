@@ -62,7 +62,7 @@ class ListSend extends React.Component {
     if (!dataIsLoaded)
       return (
         <div>
-          <h1> Pleses wait some time.... </h1>
+          <h1> Por favor, aguarde... </h1>
         </div>
       );
 
@@ -71,8 +71,8 @@ class ListSend extends React.Component {
         <Table striped bordered hover size="sm">
           <thead>
             <tr>
-              <th>id</th>
-              <th>Remetende</th>
+              <th>Id</th>
+              <th>Remetente</th>
               <th>Destinatário</th>
               <th>Status</th>
             </tr>

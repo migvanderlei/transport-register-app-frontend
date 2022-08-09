@@ -2,7 +2,12 @@ import { React, useState, useRef } from "react";
 import TextField from "@mui/material/TextField";
 import Button from 'react-bootstrap/Button';
 
+import { Redirect } from "react-router-dom";
+
+import FormQuerySend from "./send/FormQuerySend";
+
 import "../css/SearchBar.css";
+import { render } from "react-dom";
 
 const axios = require('axios');
 
@@ -20,14 +25,14 @@ const SearchBar = () => {
     .then(function (response) {
       // handle success
       console.log(response);
-      document.getElementById("response-id").innerHTML = response.value
+      document.getElementById("response-id").innerHTML = response.data.id;
     })
     .catch(function (error) {
       // handle error
       console.log(error);
     })
     .then(function () {
-      // always executed
+  
     });
   }
 
