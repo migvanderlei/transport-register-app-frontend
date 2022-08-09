@@ -1,7 +1,6 @@
 import React from "react";
 import FormQuerySend from "../../components/send/FormQuerySend";
 const API_URL = "https://secure-taiga-07754.herokuapp.com";
-const axios = require("axios");
 
 class QueryResultSend extends React.Component {
   constructor(props) {

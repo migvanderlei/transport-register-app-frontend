@@ -1,12 +1,8 @@
-import { React, useState } from "react";
-import Button from 'react-bootstrap/Button';
+import { React } from "react";
 
 import SearchBar from "../../components/SearchBar";
-import List from "../../components/List";
 
 import "../../css/SearchBar.css";
-import NotFound from "../NotFound";
-
 
 const QuerySend = () => {
     return (

@@ -41,7 +41,7 @@ class ListSend extends React.Component {
     super(props);
     this.state = {
       items: [],
-      dataIsLoaded: Boolean = false
+      dataIsLoaded: Boolean
     };
   }
 

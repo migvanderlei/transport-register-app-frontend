@@ -1,14 +1,6 @@
-import { React, useState, useRef } from "react";
+import { React, useRef } from "react";
 import TextField from "@mui/material/TextField";
 import Button from "react-bootstrap/Button";
-
-import { Redirect } from "react-router-dom";
-
-import FormQuerySend from "./send/FormQuerySend";
-
-import "../css/SearchBar.css";
-import { render } from "react-dom";
-import QueryResultSend from "../pages/send/QueryResultSend";
 
 const axios = require("axios");
 
