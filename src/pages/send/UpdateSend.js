@@ -1,8 +1,14 @@
 import React from "react";
-import SearchBar from "../../components/SearchBar";
+import "../../css/update.style.css"
 
-const UpdateSend = () => (
-    <div className="container-page">UpdateSend page</div>
-);
+import UpdateForm from '../../components/UpdateForm.comp'
+
+const UpdateSend = () => {
+    return (
+        <div className="update-page">
+            <UpdateForm/>
+        </div>
+    )
+}
 
 export default UpdateSend;
