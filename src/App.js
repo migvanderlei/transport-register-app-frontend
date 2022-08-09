@@ -7,6 +7,7 @@ import About from './pages/About';
 import CreateSend from './pages/send/CreateSend';
 import UpdateSend from './pages/send/UpdateSend';
 import QuerySend from './pages/send/QuerySend';
+import QueryResultSend from './pages/send/QueryResultSend';
 
 const App = () => {
   let Content;
@@ -25,6 +26,9 @@ const App = () => {
       break;
     case "/about":
       Content = <About />;
+      break;
+    case "/query-result":
+      Content = <QueryResultSend/>;
       break;
     default:
       Content = <Home />;

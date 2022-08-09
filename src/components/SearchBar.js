@@ -1,6 +1,6 @@
 import { React, useState, useRef } from "react";
 import TextField from "@mui/material/TextField";
-import Button from 'react-bootstrap/Button';
+import Button from "react-bootstrap/Button";
 
 import { Redirect } from "react-router-dom";
 
@@ -8,33 +8,39 @@ import FormQuerySend from "./send/FormQuerySend";
 
 import "../css/SearchBar.css";
 import { render } from "react-dom";
+import QueryResultSend from "../pages/send/QueryResultSend";
 
-const axios = require('axios');
+const axios = require("axios");
 
-const API_URL = "https://secure-taiga-07754.herokuapp.com"
-
+const API_URL = "https://secure-taiga-07754.herokuapp.com";
 
 const SearchBar = () => {
-  const valueRef = useRef('')
+  const valueRef = useRef("");
 
   const makeSearch = () => {
-    console.log(valueRef.current.value)
-    let id = valueRef.current.value
-    console.log(`${API_URL}/envio/${id}`)
-    axios.get(`${API_URL}/envio/${id}`)
-    .then(function (response) {
-      // handle success
-      console.log(response);
-      document.getElementById("response-id").innerHTML = response.data.id;
-    })
-    .catch(function (error) {
-      // handle error
-      console.log(error);
-    })
-    .then(function () {
-  
-    });
-  }
+    console.log(valueRef.current.value);
+    let id = valueRef.current.value;
+    console.log(`${API_URL}/envio/${id}`);
+    axios
+      .get(`${API_URL}/envio/${id}`)
+      .then(function (response) {
+        // handle success
+        console.log(response);
+        const retrievedId = response.data.id;
+
+        if (retrievedId) {
+          // document.getElementById("response-id") = <QueryResultSend data={response.data}/>
+          window.location = `/query-result?id=` + id;
+        }
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+        document.getElementById("response-id").innerHTML =
+          "Nenhum dado encontrado para essa busca!";
+      })
+      .then(function () {});
+  };
 
   return (
     <div className="main">
@@ -52,10 +58,9 @@ const SearchBar = () => {
         Pesquisar
       </Button>
 
-      <div id="response-id">
-      </div>
+      <div id="response-id"></div>
     </div>
   );
-}
+};
 
 export default SearchBar;
