@@ -2,6 +2,7 @@ import React from 'react';
 
 import ListSend from '../components/send/ListSend';
 
+
 import '../css/style.css';
 
 const Home = () => (

@@ -4,25 +4,57 @@ import Badge from 'react-bootstrap/Badge';
 
 import '../../css/list-send.css';
 
+const API_URL = "https://secure-taiga-07754.herokuapp.com"
+
+const findStatus = (data) => {
+  let sendjson = JSON.parse(data)
+  let finalizado = sendjson.finalizado
+  let entregue = sendjson.entregue
+  
+  console.log("finalizado: " + finalizado)
+  console.log("entregue: " + entregue)
+
+  if (finalizado === "true" && entregue === "true") return "entregue";
+  if (finalizado === "true" && entregue === "false") return "cancelado";
+  if (finalizado === "false" && entregue === "false") return "progresso";
+}
+
+const findId = (data) => {
+  let sendjson = JSON.parse(data)
+  console.log(sendjson)
+  return sendjson.id
+}
+
+const findSender = (data) => {
+  let sendjson = JSON.parse(data)
+  return sendjson.remetente.nome
+}
+
+const findReceiver = (data) => {
+  let sendjson = JSON.parse(data)
+  return sendjson.destinatario.nome
+}
+
 class ListSend extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
       items: [],
-      dataIsLoaded: false
+      dataIsLoaded: Boolean = false
     };
   }
 
   componentDidMount() {
-    fetch("https://jsonplaceholder.typicode.com/users")
+    fetch(`${API_URL}/envios`)
       .then((res) => res.json())
       .then((json) => {
-        this.setState({
+        console.log(json)
+        this.setState ({
           items: json,
           dataIsLoaded: true
         });
-      })
+      });
   }
 
   render() {
@@ -33,7 +65,6 @@ class ListSend extends React.Component {
           <h1> Pleses wait some time.... </h1>
         </div>
       );
-
 
     return (
       <>
@@ -50,14 +81,14 @@ class ListSend extends React.Component {
             {
               items.map((item) => (
                 <tr>
-                  <td>{item.id}</td>
-                  <td>{item.username}</td>
-                  <td>{item.name}</td>
+                  <td>{findId(item.data)}</td>
+                  <td>{findSender(item.data)}</td>
+                  <td>{findReceiver(item.data)}</td>
 
                   {(() => {
-                    switch (item.email) {
-                      case "Sincere@april.biz": return <Badge bg="success">Entregue</Badge>;
-                      case "Karley_Dach@jasper.info": return <Badge bg="danger">Cancelado</Badge>;
+                    switch (findStatus(item.data)) {
+                      case "entregue": return <Badge pill bg="success">Entregue</Badge>;
+                      case "cancelado": return <Badge pill bg="danger">Cancelado</Badge>;
                       default: return <Badge bg="warning">Em progresso</Badge>;
                     }
                   })()}
@@ -67,6 +98,7 @@ class ListSend extends React.Component {
             }
           </tbody>
         </Table>
+
       </>
 
     );

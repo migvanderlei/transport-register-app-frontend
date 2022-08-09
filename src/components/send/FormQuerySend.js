@@ -26,7 +26,7 @@ const FormQuerySend = () => (
 
           <Form.Group as={Col} controlId="formGridDepth">
             <Form.Label>Profundidade</Form.Label>
-            <Form.Control placeholder="Disabled input" disabled />
+            <Form.Control placeholder="Disabled input" disabled ></Form.Control>
           </Form.Group>
         </Row>
       </div>
